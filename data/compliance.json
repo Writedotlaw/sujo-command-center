@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T05:29:02Z",
+  "updatedAt": "2026-02-17T05:29:42Z",
   "state": "healthy",
   "score": 100,
   "pass": 5,
@@ -30,7 +30,7 @@
       "path": "/Users/joeregalia/Projects/_ops/sujo-core/autostate/session-context.json",
       "severity": "medium",
       "status": "pass",
-      "details": "4"
+      "details": "5"
     },
     {
       "id": "project_checkpoint_fresh",
@@ -39,7 +39,7 @@
       "path": "/Users/joeregalia/Projects/_ops/sujo-core/autostate/project-checkpoint.md",
       "severity": "medium",
       "status": "pass",
-      "details": "4"
+      "details": "5"
     },
     {
       "id": "model_lanes_present",

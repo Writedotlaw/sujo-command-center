@@ -47,6 +47,7 @@
   <section id='sec-memo' class='section'></section>
   <section id='sec-charter' class='section'></section>
   <section id='sec-compliance' class='section'></section>
+  <section id='sec-live' class='section'></section>
 
   <section class='glass footer'>
     <div><strong>Supervisor Mode</strong></div>
@@ -54,7 +55,7 @@
   </section>
 </div>
 <script>
-const tabs=[['projects','Projects'],['suggestions','Suggestions'],['roadmap','Future Plan'],['models','Model Multitask Board'],['memo','SuJo Memo'],['charter','Charter'],['compliance','Compliance']];
+const tabs=[['projects','Projects'],['suggestions','Suggestions'],['roadmap','Future Plan'],['models','Model Multitask Board'],['memo','SuJo Memo'],['charter','Charter'],['compliance','Compliance'],['live','Live Work']];
 const tWrap=document.getElementById('tabs');
 function setTab(key){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelector(`[data-tab='${key}']`).classList.add('active');document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById('sec-'+key).classList.add('active');}
 tWrap.innerHTML=tabs.map(([k,l],i)=>`<button class='tab ${i===0?'active':''}' data-tab='${k}'>${l}</button>`).join('');
@@ -139,9 +140,31 @@ fetch('./data/projects.json').then(r=>r.json()).then(data=>{
       </article>
     </div>`;
   });
+
+  fetch('./data/live-status.json').then(r=>r.json()).then(l=>{
+    document.getElementById('sec-live').innerHTML = `<div class='cards'>
+      <article class='glass card'>
+        <strong>Live Execution Status</strong>
+        <p class='muted'>Updated: ${new Date(l.updatedAt).toLocaleString()}</p>
+        <div><span class='pill ok'>${l.mode}</span> <span class='pill'>refresh: ${l.heartbeatSeconds}s</span></div>
+      </article>
+      <article class='glass card'>
+        <strong>Now Working On</strong>
+        <ul>${l.nowWorkingOn.map(x=>`<li>${x}</li>`).join('')}</ul>
+      </article>
+      <article class='glass card'>
+        <strong>Model Queue</strong>
+        <ul>
+          <li><b>GPT:</b> ${(l.modelQueue.gpt||[]).join(' • ')}</li>
+          <li><b>Claude:</b> ${(l.modelQueue.claude||[]).join(' • ')}</li>
+          <li><b>Gemini:</b> ${(l.modelQueue.gemini||[]).join(' • ')}</li>
+        </ul>
+      </article>
+    </div>`;
+  });
 });
 
-setInterval(()=>location.reload(), 120000);
+setInterval(()=>location.reload(), 30000);
 </script>
 </body>
 </html>

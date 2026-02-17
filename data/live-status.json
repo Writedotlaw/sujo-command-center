@@ -1,0 +1,22 @@
+{
+  "updatedAt": "2026-02-17T05:39:42Z",
+  "mode": "deep-execution",
+  "nowWorkingOn": [
+    "Dashboard live-status upgrades",
+    "SuJo Core continuity and compliance hardening",
+    "Website platform migration system"
+  ],
+  "modelQueue": {
+    "gpt": [
+      "Scaffold production repo for dual-site platform",
+      "Implement shared backend schema"
+    ],
+    "claude": [
+      "Generate high-fidelity premium copy + UX polish notes"
+    ],
+    "gemini": [
+      "Generate alternate hero/value prop variants per audience"
+    ]
+  },
+  "heartbeatSeconds": 30
+}
