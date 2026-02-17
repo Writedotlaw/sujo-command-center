@@ -28,6 +28,10 @@
     .phase{font-size:.75rem;color:#cfe0ff;background:#16214a;border:1px solid #334b8f;border-radius:8px;padding:4px 6px;text-align:center}
     .tag{font-size:.72rem;padding:4px 8px;border-radius:999px;border:1px solid #3b4f8e}
     .footer{padding:12px;margin-top:10px}
+    .ticker{max-height:220px;overflow:auto;border:1px solid #30457f;border-radius:12px;padding:10px;background:#101936}
+    .tick{padding:8px 0;border-bottom:1px dashed #2e4378;font-size:.9rem}
+    .tick:last-child{border-bottom:none}
+    .ts{color:var(--muted);font-size:.75rem}
     @media (max-width:800px){.kpis{grid-template-columns:repeat(2,1fr)}.cards{grid-template-columns:1fr}.g2{grid-template-columns:1fr}.step{grid-template-columns:70px 1fr}}
   </style>
 </head>
@@ -160,7 +164,16 @@ fetch('./data/projects.json').then(r=>r.json()).then(data=>{
           <li><b>Gemini:</b> ${(l.modelQueue.gemini||[]).join(' • ')}</li>
         </ul>
       </article>
+      <article class='glass card' style='grid-column:1/-1'>
+        <strong>Live Activity Ticker</strong>
+        <div id='activityTicker' class='ticker'>Loading activity…</div>
+      </article>
     </div>`;
+
+    fetch('./data/activity-feed.json').then(r=>r.json()).then(f=>{
+      const items=(f.items||[]).map(i=>`<div class='tick'><div>${i.text}</div><div class='ts'>${new Date(i.ts).toLocaleTimeString()}</div></div>`).join('');
+      document.getElementById('activityTicker').innerHTML=items || 'No activity yet.';
+    });
   });
 });
 
