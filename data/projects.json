@@ -1,0 +1,46 @@
+{
+  "updatedAt": "2026-02-16T20:50:00-08:00",
+  "owners": ["Joe", "Susie", "SuJo Bot"],
+  "projects": [
+    {
+      "name": "Website Migration Platform",
+      "domain": "Shared Tools",
+      "status": "In Progress",
+      "progress": 35,
+      "priority": "P0",
+      "owner": "SuJo Bot",
+      "next": "Select Round 1 visual direction",
+      "eta": "2-3 weeks for MVP"
+    },
+    {
+      "name": "Lit Lavender New Site",
+      "domain": "Lavender Farm",
+      "status": "Design Review",
+      "progress": 25,
+      "priority": "P0",
+      "owner": "Joe + Susie",
+      "next": "Approve Home Concept A/B",
+      "eta": "MVP after content inventory"
+    },
+    {
+      "name": "Round Mountain Retreat New Site",
+      "domain": "Wedding Venue",
+      "status": "Design Review",
+      "progress": 25,
+      "priority": "P0",
+      "owner": "Joe + Susie",
+      "next": "Approve Home Concept A/B",
+      "eta": "MVP after content inventory"
+    },
+    {
+      "name": "Ops Command Center",
+      "domain": "Operations",
+      "status": "Active",
+      "progress": 70,
+      "priority": "P1",
+      "owner": "SuJo Bot",
+      "next": "Add weekly KPI feed",
+      "eta": "This week"
+    }
+  ]
+}
