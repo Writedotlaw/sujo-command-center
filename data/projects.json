@@ -1,6 +1,10 @@
 {
-  "updatedAt": "2026-02-16T21:05:00-08:00",
-  "owners": ["Joe", "Susie", "SuJo Bot"],
+  "updatedAt": "2026-02-17T06:09:18Z",
+  "owners": [
+    "Joe",
+    "Susie",
+    "SuJo Bot"
+  ],
   "kpis": {
     "weeklyVelocity": 18,
     "openRisks": 4,
@@ -28,10 +32,30 @@
     }
   ],
   "roadmap": [
-    {"phase":"Phase 1","title":"Design + IA Lock","window":"Week 1","status":"In Progress"},
-    {"phase":"Phase 2","title":"Shared Platform Build","window":"Weeks 2-3","status":"Planned"},
-    {"phase":"Phase 3","title":"Content Migration + SEO Redirects","window":"Week 4","status":"Planned"},
-    {"phase":"Phase 4","title":"Guest App Modules (MVP)","window":"Weeks 5-6","status":"Planned"}
+    {
+      "phase": "Phase 1",
+      "title": "Design + IA Lock",
+      "window": "Week 1",
+      "status": "In Progress"
+    },
+    {
+      "phase": "Phase 2",
+      "title": "Shared Platform Build",
+      "window": "Weeks 2-3",
+      "status": "Planned"
+    },
+    {
+      "phase": "Phase 3",
+      "title": "Content Migration + SEO Redirects",
+      "window": "Week 4",
+      "status": "Planned"
+    },
+    {
+      "phase": "Phase 4",
+      "title": "Guest App Modules (MVP)",
+      "window": "Weeks 5-6",
+      "status": "Planned"
+    }
   ],
   "modelTasks": [
     {
@@ -103,6 +127,16 @@
       "owner": "SuJo Bot",
       "next": "Add auto-refresh + notifications",
       "eta": "This week"
+    },
+    {
+      "name": "RMR Weddings Lookbook",
+      "domain": "Wedding Venue",
+      "status": "Queued",
+      "progress": 10,
+      "priority": "P0",
+      "owner": "SuJo Bot",
+      "next": "Produce premium Draft 1 lookbook + send review link/export",
+      "eta": "Draft 1 tonight"
     }
   ]
 }
