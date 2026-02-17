@@ -1,0 +1,54 @@
+{
+  "updatedAt": "2026-02-17T05:29:02Z",
+  "state": "healthy",
+  "score": 100,
+  "pass": 5,
+  "fail": 0,
+  "checks": [
+    {
+      "id": "charter_exists",
+      "desc": "Charter file exists",
+      "type": "file_exists",
+      "path": "/Users/joeregalia/Projects/_ops/sujo-core/CHARTER.md",
+      "severity": "high",
+      "status": "pass",
+      "details": ""
+    },
+    {
+      "id": "constitution_exists",
+      "desc": "Constitution file exists",
+      "type": "file_exists",
+      "path": "/Users/joeregalia/Projects/_ops/sujo-core/CONSTITUTION.json",
+      "severity": "high",
+      "status": "pass",
+      "details": ""
+    },
+    {
+      "id": "session_context_fresh",
+      "desc": "Session context updated in last 120 minutes",
+      "type": "fresh_minutes",
+      "path": "/Users/joeregalia/Projects/_ops/sujo-core/autostate/session-context.json",
+      "severity": "medium",
+      "status": "pass",
+      "details": "4"
+    },
+    {
+      "id": "project_checkpoint_fresh",
+      "desc": "Project checkpoint updated in last 120 minutes",
+      "type": "fresh_minutes",
+      "path": "/Users/joeregalia/Projects/_ops/sujo-core/autostate/project-checkpoint.md",
+      "severity": "medium",
+      "status": "pass",
+      "details": "4"
+    },
+    {
+      "id": "model_lanes_present",
+      "desc": "Model lanes exist in constitution",
+      "type": "json_key",
+      "path": "/Users/joeregalia/Projects/_ops/sujo-core/CONSTITUTION.json",
+      "severity": "high",
+      "status": "pass",
+      "details": ""
+    }
+  ]
+}

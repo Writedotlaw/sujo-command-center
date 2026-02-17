@@ -46,6 +46,7 @@
   <section id='sec-models' class='section'></section>
   <section id='sec-memo' class='section'></section>
   <section id='sec-charter' class='section'></section>
+  <section id='sec-compliance' class='section'></section>
 
   <section class='glass footer'>
     <div><strong>Supervisor Mode</strong></div>
@@ -53,7 +54,7 @@
   </section>
 </div>
 <script>
-const tabs=[['projects','Projects'],['suggestions','Suggestions'],['roadmap','Future Plan'],['models','Model Multitask Board'],['memo','SuJo Memo'],['charter','Charter']];
+const tabs=[['projects','Projects'],['suggestions','Suggestions'],['roadmap','Future Plan'],['models','Model Multitask Board'],['memo','SuJo Memo'],['charter','Charter'],['compliance','Compliance']];
 const tWrap=document.getElementById('tabs');
 function setTab(key){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelector(`[data-tab='${key}']`).classList.add('active');document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById('sec-'+key).classList.add('active');}
 tWrap.innerHTML=tabs.map(([k,l],i)=>`<button class='tab ${i===0?'active':''}' data-tab='${k}'>${l}</button>`).join('');
@@ -114,6 +115,27 @@ fetch('./data/projects.json').then(r=>r.json()).then(data=>{
           <li><b>Claude:</b> ${c.multimodel.claude}</li>
           <li><b>Gemini:</b> ${c.multimodel.gemini}</li>
         </ul>
+      </article>
+    </div>`;
+  });
+
+  fetch('./data/compliance.json').then(r=>r.json()).then(z=>{
+    document.getElementById('sec-compliance').innerHTML = `<div class='cards'>
+      <article class='glass card'>
+        <strong>Compliance State</strong>
+        <p class='muted'>Updated: ${new Date(z.updatedAt).toLocaleString()}</p>
+        <div><span class='pill ${z.state==='healthy'?'ok':'p0'}'>${z.state.toUpperCase()}</span> <span class='pill'>Score: ${z.score}</span></div>
+      </article>
+      <article class='glass card'>
+        <strong>Check Summary</strong>
+        <ul>
+          <li>Pass: ${z.pass}</li>
+          <li>Fail: ${z.fail}</li>
+        </ul>
+      </article>
+      <article class='glass card'>
+        <strong>Details</strong>
+        <ul>${z.checks.map(c=>`<li>[${c.status}] ${c.id}</li>`).join('')}</ul>
       </article>
     </div>`;
   });
