@@ -1,0 +1,28 @@
+{
+  "updatedAt": "2026-02-17T16:49:00Z",
+  "mode": "deep-execution",
+  "nowWorkingOn": [
+    "RUNNING: Scaffold production repo for dual-site platform"
+  ],
+  "nextUp": [
+    "RMR Weddings Lookbook — Draft 1 premium deck + review delivery",
+    "Dual-site platform scaffold + backend schema planning",
+    "Dashboard reliability hardening (live ticker + stale detection)"
+  ],
+  "modelQueue": {
+    "gpt": [
+      "RUNNING: Scaffold production repo for dual-site platform",
+      "NEXT: Build Round Mountain weddings lookbook (Canva or equivalent export)",
+      "Implement shared backend schema"
+    ],
+    "claude": [
+      "Generate high-fidelity premium copy + UX polish notes",
+      "Polish lookbook narrative and section headlines"
+    ],
+    "gemini": [
+      "Generate alternate hero/value prop variants per audience",
+      "Generate wedding package naming and tier copy variants"
+    ]
+  },
+  "heartbeatSeconds": 30
+}
