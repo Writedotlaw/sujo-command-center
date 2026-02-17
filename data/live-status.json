@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-02-17T06:09:00Z",
+  "updatedAt": "2026-02-17T06:09:35Z",
   "mode": "deep-execution",
   "nowWorkingOn": [
     "Dashboard live-status upgrades",
@@ -9,13 +9,16 @@
   "modelQueue": {
     "gpt": [
       "RUNNING: Scaffold production repo for dual-site platform",
+      "NEXT: Build Round Mountain weddings lookbook (Canva or equivalent export)",
       "Implement shared backend schema"
     ],
     "claude": [
-      "Generate high-fidelity premium copy + UX polish notes"
+      "Generate high-fidelity premium copy + UX polish notes",
+      "Polish lookbook narrative and section headlines"
     ],
     "gemini": [
-      "Generate alternate hero/value prop variants per audience"
+      "Generate alternate hero/value prop variants per audience",
+      "Generate wedding package naming and tier copy variants"
     ]
   },
   "heartbeatSeconds": 30
