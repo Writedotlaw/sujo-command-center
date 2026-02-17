@@ -44,6 +44,7 @@
   <section id='sec-suggestions' class='section'></section>
   <section id='sec-roadmap' class='section'></section>
   <section id='sec-models' class='section'></section>
+  <section id='sec-memo' class='section'></section>
 
   <section class='glass footer'>
     <div><strong>Supervisor Mode</strong></div>
@@ -51,7 +52,7 @@
   </section>
 </div>
 <script>
-const tabs=[['projects','Projects'],['suggestions','Suggestions'],['roadmap','Future Plan'],['models','Model Multitask Board']];
+const tabs=[['projects','Projects'],['suggestions','Suggestions'],['roadmap','Future Plan'],['models','Model Multitask Board'],['memo','SuJo Memo']];
 const tWrap=document.getElementById('tabs');
 function setTab(key){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelector(`[data-tab='${key}']`).classList.add('active');document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById('sec-'+key).classList.add('active');}
 tWrap.innerHTML=tabs.map(([k,l],i)=>`<button class='tab ${i===0?'active':''}' data-tab='${k}'>${l}</button>`).join('');
@@ -75,7 +76,27 @@ fetch('./data/projects.json').then(r=>r.json()).then(data=>{
 
   const mt=data.modelTasks||[];
   document.getElementById('sec-models').innerHTML=`<div class='list'>${mt.map(m=>`<article class='glass row'><div class='head'><div class='title'>${m.task}</div><span class='pill'>${m.status}</span></div><div class='meta'><span class='pill'>Model: ${m.model}</span><span class='pill'>Mode: ${m.mode}</span></div><div><span class='muted'>ETA:</span> ${m.eta}</div></article>`).join('')}</div>`;
+
+  fetch('./data/memo.json').then(r=>r.json()).then(m=>{
+    document.getElementById('sec-memo').innerHTML = `<div class='cards'>
+      <article class='glass card'>
+        <strong>Identity + Mode</strong>
+        <p class='muted' style='margin:8px 0'>${m.identity} • ${m.operatingMode}</p>
+        <div><span class='pill'>Humans: ${m.humans.join(' + ')}</span></div>
+      </article>
+      <article class='glass card'>
+        <strong>Always Remember</strong>
+        <ul>${m.alwaysRemember.map(x=>`<li>${x}</li>`).join('')}</ul>
+      </article>
+      <article class='glass card'>
+        <strong>Current Focus</strong>
+        <ul>${m.currentFocus.map(x=>`<li>${x}</li>`).join('')}</ul>
+      </article>
+    </div>`;
+  });
 });
+
+setInterval(()=>location.reload(), 120000);
 </script>
 </body>
 </html>
