@@ -45,6 +45,7 @@
   <section id='sec-roadmap' class='section'></section>
   <section id='sec-models' class='section'></section>
   <section id='sec-memo' class='section'></section>
+  <section id='sec-charter' class='section'></section>
 
   <section class='glass footer'>
     <div><strong>Supervisor Mode</strong></div>
@@ -52,7 +53,7 @@
   </section>
 </div>
 <script>
-const tabs=[['projects','Projects'],['suggestions','Suggestions'],['roadmap','Future Plan'],['models','Model Multitask Board'],['memo','SuJo Memo']];
+const tabs=[['projects','Projects'],['suggestions','Suggestions'],['roadmap','Future Plan'],['models','Model Multitask Board'],['memo','SuJo Memo'],['charter','Charter']];
 const tWrap=document.getElementById('tabs');
 function setTab(key){document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelector(`[data-tab='${key}']`).classList.add('active');document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById('sec-'+key).classList.add('active');}
 tWrap.innerHTML=tabs.map(([k,l],i)=>`<button class='tab ${i===0?'active':''}' data-tab='${k}'>${l}</button>`).join('');
@@ -91,6 +92,28 @@ fetch('./data/projects.json').then(r=>r.json()).then(data=>{
       <article class='glass card'>
         <strong>Current Focus</strong>
         <ul>${m.currentFocus.map(x=>`<li>${x}</li>`).join('')}</ul>
+      </article>
+    </div>`;
+  });
+
+  fetch('./data/charter.json').then(r=>r.json()).then(c=>{
+    document.getElementById('sec-charter').innerHTML = `<div class='cards'>
+      <article class='glass card'>
+        <strong>${c.name}</strong>
+        <p class='muted'>Version ${c.version} • Mode: ${c.mode}</p>
+        <ul>${c.commitments.map(x=>`<li>${x}</li>`).join('')}</ul>
+      </article>
+      <article class='glass card'>
+        <strong>Escalation Rules</strong>
+        <ul>${c.escalation.map(x=>`<li>${x}</li>`).join('')}</ul>
+      </article>
+      <article class='glass card'>
+        <strong>Multi-Model Lanes</strong>
+        <ul>
+          <li><b>GPT/Codex:</b> ${c.multimodel.gpt_codex}</li>
+          <li><b>Claude:</b> ${c.multimodel.claude}</li>
+          <li><b>Gemini:</b> ${c.multimodel.gemini}</li>
+        </ul>
       </article>
     </div>`;
   });
