@@ -1,45 +1,107 @@
 {
-  "updatedAt": "2026-02-16T20:50:00-08:00",
+  "updatedAt": "2026-02-16T21:05:00-08:00",
   "owners": ["Joe", "Susie", "SuJo Bot"],
+  "kpis": {
+    "weeklyVelocity": 18,
+    "openRisks": 4,
+    "automationCoverage": 62,
+    "modelRuns24h": 27
+  },
+  "suggestions": [
+    {
+      "title": "Consolidate booking + event inquiry into one shared backend",
+      "impact": "High",
+      "why": "Reduces duplicate ops and enables guest app features faster.",
+      "next": "Map current booking providers + required APIs this week."
+    },
+    {
+      "title": "Build reusable design system across both brands",
+      "impact": "High",
+      "why": "Faster iteration, brand consistency, lower maintenance.",
+      "next": "Lock typography, spacing, and CTA component family in Round 2."
+    },
+    {
+      "title": "Create AI inbox ops lane for Joe + Susie",
+      "impact": "Medium",
+      "why": "Cuts response time and protects focus.",
+      "next": "Finish Gmail auth, start draft-only mode, then graduate to approved auto-send categories."
+    }
+  ],
+  "roadmap": [
+    {"phase":"Phase 1","title":"Design + IA Lock","window":"Week 1","status":"In Progress"},
+    {"phase":"Phase 2","title":"Shared Platform Build","window":"Weeks 2-3","status":"Planned"},
+    {"phase":"Phase 3","title":"Content Migration + SEO Redirects","window":"Week 4","status":"Planned"},
+    {"phase":"Phase 4","title":"Guest App Modules (MVP)","window":"Weeks 5-6","status":"Planned"}
+  ],
+  "modelTasks": [
+    {
+      "task": "Lit Lavender visual concept synthesis",
+      "model": "Claude",
+      "mode": "creative/reasoning",
+      "status": "Queued",
+      "eta": "Tonight"
+    },
+    {
+      "task": "RMR conversion funnel copy variants",
+      "model": "Gemini",
+      "mode": "alt-generation",
+      "status": "Queued",
+      "eta": "Tonight"
+    },
+    {
+      "task": "Shared platform architecture + repo scaffolding",
+      "model": "Codex",
+      "mode": "implementation",
+      "status": "In Progress",
+      "eta": "1-2 days"
+    },
+    {
+      "task": "Ops automation scripts + reporting",
+      "model": "Codex + Claude",
+      "mode": "parallel",
+      "status": "Active",
+      "eta": "This week"
+    }
+  ],
   "projects": [
     {
       "name": "Website Migration Platform",
       "domain": "Shared Tools",
       "status": "In Progress",
-      "progress": 35,
+      "progress": 38,
       "priority": "P0",
       "owner": "SuJo Bot",
-      "next": "Select Round 1 visual direction",
+      "next": "Approve premium direction and begin scaffold",
       "eta": "2-3 weeks for MVP"
     },
     {
       "name": "Lit Lavender New Site",
       "domain": "Lavender Farm",
-      "status": "Design Review",
-      "progress": 25,
+      "status": "Design Upgrade",
+      "progress": 30,
       "priority": "P0",
       "owner": "Joe + Susie",
-      "next": "Approve Home Concept A/B",
-      "eta": "MVP after content inventory"
+      "next": "Review high-fidelity Round 2 concepts",
+      "eta": "MVP after IA + content lock"
     },
     {
       "name": "Round Mountain Retreat New Site",
       "domain": "Wedding Venue",
-      "status": "Design Review",
-      "progress": 25,
+      "status": "Design Upgrade",
+      "progress": 30,
       "priority": "P0",
       "owner": "Joe + Susie",
-      "next": "Approve Home Concept A/B",
-      "eta": "MVP after content inventory"
+      "next": "Review high-fidelity Round 2 concepts",
+      "eta": "MVP after IA + content lock"
     },
     {
       "name": "Ops Command Center",
       "domain": "Operations",
       "status": "Active",
-      "progress": 70,
+      "progress": 78,
       "priority": "P1",
       "owner": "SuJo Bot",
-      "next": "Add weekly KPI feed",
+      "next": "Add auto-refresh + notifications",
       "eta": "This week"
     }
   ]
