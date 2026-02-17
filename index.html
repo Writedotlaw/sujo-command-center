@@ -13,7 +13,7 @@
     .glass{backdrop-filter: blur(12px);background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 10px 36px rgba(0,0,0,.26)}
     .hero{padding:14px}
     h1{margin:0;font-size:1.28rem;font-weight:800}.muted{color:var(--muted);font-size:.88rem}
-    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.tab{padding:8px 12px;border-radius:999px;border:1px solid #3b4f8e;color:#d8e4ff;cursor:pointer}.tab.active{background:linear-gradient(90deg,var(--a),var(--b));border:none;color:#09101f;font-weight:700}
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.tab{padding:8px 12px;border-radius:999px;border:1px solid #3b4f8e;color:#d8e4ff;cursor:pointer;background:rgba(18,29,62,.85)}.tab.active{background:linear-gradient(90deg,var(--a),var(--b));border:none;color:#09101f;font-weight:700}
     .kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}.k{padding:10px}.k .l{font-size:.75rem;color:var(--muted)}.k .v{font-weight:800;font-size:1.1rem;margin-top:2px}
     .section{display:none;margin-top:10px}.section.active{display:block}
     .list{display:grid;gap:8px}.row{padding:12px}.head{display:flex;justify-content:space-between;gap:8px;align-items:center}.title{font-weight:700}
@@ -146,6 +146,7 @@ fetch('./data/projects.json').then(r=>r.json()).then(data=>{
   });
 
   fetch('./data/live-status.json').then(r=>r.json()).then(l=>{
+    document.getElementById('updated').textContent='Live heartbeat: '+new Date(l.updatedAt).toLocaleString()+` · refresh ${l.heartbeatSeconds}s`;
     document.getElementById('sec-live').innerHTML = `<div class='cards'>
       <article class='glass card'>
         <strong>Live Execution Status</strong>
